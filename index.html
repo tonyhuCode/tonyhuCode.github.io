@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Love Story</title>
+<title>Tong & Tong</title>
 <link rel="shortcut icon" type="image/x-icon" href="images/love.png" media="screen" />
 
 <style type="text/css">
@@ -22,27 +22,35 @@
 <body>
 
 <div id="mainDiv">
-	<div id="content">
+      <div id="valentine">
+        <div class="shake">
+            <div class="rope"></div>
+            <div class="heart-wrap">
+                <img src="images/loveb.png" class="heart">
+                <img src="images/loves.png" class="beat">
+            </div>
+        </div>
+        <div class="tiny"></div>
+		<div class="close">&times;</div>
+		<div id="elapseClock"></div>
+
+      </div>
+	 
 		<div id="code">
 			<span class="comments">/**</span><br />
 			<span class="space"/><span class="comments">*The story between Mr Hu and Mrs Zhang</span><br />
 			<span class="space"/><span class="comments">*/</span><br />
 			Boy boy = new Boy("Mr HU");<br/>
 			Girl girl = new Girl("Mrs ZHANG");<br/>
-			boy.love(girl);
-			<span class="comments">// The boy loves the girl. </span><br />
+			boy.like(girl);
+			<span class="comments">// At a vegetarian restaurant. </span><br />
+			boy.walkWith(girl);
+			<span class="comments">// At a university  playground. </span><br />
+			boy.backToAlmaMater(girl);
+			<span class="comments">// In alma mater. </span><br />
 			continue();<span class="comments">// To build the future.</span><br />
 		</div>
-		<div id="loveHeart">
-			<canvas id="garden"></canvas>
-			<div id="words">
-				<div id="messages">
-				
-				</div>
-				<div id="elapseClock"></div>
-			</div>
-		</div>
-	</div>
+
 </div>
 
 <script type="text/javascript">
@@ -55,28 +63,15 @@ together.setMinutes(15);
 together.setSeconds(0);
 together.setMilliseconds(0);
 
-if (!document.createElement('canvas').getContext) {
-	var msg = document.createElement("div");
-	msg.id = "errorMsg";
-	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
-	document.body.appendChild(msg);
-	$("#code").css("display", "none")
-	$("#copyright").css("position", "absolute");
-	$("#copyright").css("bottom", "10px");
-	document.execCommand("stop");
-} else {
-	setTimeout(function () {
-		startHeartAnimation();
-	}, 5000);
-
 	timeElapse(together);
 	setInterval(function () {
 		timeElapse(together);
 	}, 500);
-
-	adjustCodePosition();
+	showMessages();
 	$("#code").typewriter();
-}
+
 </script>
+<script src="js/jquery.min.js"></script>
+<script src="js/beat.js"></script>
 </body>
 </html>
